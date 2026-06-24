@@ -12,7 +12,8 @@ export function Header() {
   const [isMobileOpen, setIsMobileOpen] = useState(false);
 
   useEffect(() => {
-    const handleScroll = () => setIsScrolled(window.scrollY > 40);
+    const handleScroll = () => setIsScrolled(window.scrollY > 50);
+    handleScroll();
     window.addEventListener('scroll', handleScroll, { passive: true });
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
@@ -26,13 +27,25 @@ export function Header() {
 
   return (
     <header
-      className={cn(
-        'fixed top-0 right-0 left-0 z-50 transition-all duration-500',
-        isScrolled
-          ? 'bg-cream/95 py-3 shadow-sm backdrop-blur-md'
-          : 'bg-transparent py-5'
-      )}
-    >
+  className={cn(
+    'fixed top-0 right-0 left-0 z-50 transition-all duration-[400ms] ease-out',
+    isScrolled
+      ? 'border-b border-[rgba(176,141,87,0.12)] bg-[rgba(248,245,240,0.92)] py-2.5 shadow-[0_10px_40px_rgba(47,42,37,0.05)] backdrop-blur-[24px]'
+      : 'border-b border-transparent bg-transparent py-5 shadow-none backdrop-blur-none'
+  )}
+  style={
+    isScrolled
+      ? {
+          backgroundColor: 'rgba(248,245,240,0.82)',
+          backdropFilter: 'blur(18px)',
+          WebkitBackdropFilter: 'blur(18px)',
+        }
+      : {
+          backdropFilter: 'none',
+          WebkitBackdropFilter: 'none',
+        }
+  }
+>
       <Container className="flex items-center justify-between">
         <a href="#" className="group flex flex-col">
           <span className="font-serif text-xl tracking-wide text-charcoal sm:text-2xl">
