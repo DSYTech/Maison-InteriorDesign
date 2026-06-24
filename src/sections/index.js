@@ -1,0 +1,13 @@
+export { default as Hero } from './Hero';
+export { default as TrustBar } from './TrustBar';
+export { default as FeaturedProjects } from './FeaturedProjects';
+export { default as BeforeAfter } from './BeforeAfter';
+export { default as Services } from './Services';
+export { default as DesignProcess } from './DesignProcess';
+export { default as DesignGallery } from './DesignGallery';
+export { default as MaterialsFinishes } from './MaterialsFinishes';
+export { default as Testimonials } from './Testimonials';
+export { default as MeetDesigners } from './MeetDesigners';
+export { default as DesignInsights } from './DesignInsights';
+export { default as ConsultationCTA } from './ConsultationCTA';
+export { default as Contact } from './Contact';
